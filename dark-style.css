@@ -4,6 +4,37 @@
     box-sizing:border-box;
 }
 
+/* toast meldung */
+
+#toast{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    padding:18px 25px;
+
+    border-radius:20px;
+
+    background:#44c67d;
+
+    color:white;
+
+    font-weight:600;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.3);
+
+    opacity:0;
+
+    transition:.4s;
+
+    z-index:1000;
+
+}
+
 body{
     font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
     background:#111827;
@@ -504,6 +535,16 @@ body{
 
 }
 
+#searchMessage{
+
+    margin-top:15px;
+
+    color:#f87171;
+
+    font-weight:500;
+
+}
+
 
 /* grid */
 
@@ -798,31 +839,6 @@ body{
 }
 
 
-/* responsive */
-
-@media(max-width:1200px){
-
-.grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.sidebar{
-
-    display:none;
-
-    width:110px;
-
-    overflow-y:auto;
-
-    overflow-x:hidden;
-
-}
-
-}
-
-
 
 #aboutPanel{
 
@@ -928,5 +944,253 @@ body{
     color:white;
 
     transform:scale(1.08);
+
+}
+
+
+
+#projectPage{
+
+    display:none;
+
+}
+
+
+/* ===================================== */
+/* Responsive */
+/* ===================================== */
+
+.menuButton{
+
+    display:none;
+
+}
+
+.closeSidebar{
+
+    display:none;
+
+}
+
+
+@media (max-width:1200px){
+
+    /* Main grid */
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    /* Hide sidebar */
+
+    .sidebar{
+
+        position:fixed;
+
+        left:-140px;
+
+        top:0;
+
+        transition:.4s;
+
+        z-index:1000;
+
+    }
+
+    .sidebar.open{
+
+        left:0;
+
+    }
+
+    .closeSidebar{
+
+        display:flex;
+
+        width:50px;
+
+        height:50px;
+
+        justify-content:center;
+
+        align-items:center;
+
+        color:white;
+
+        font-size:24px;
+
+        cursor:pointer;
+
+        margin-bottom:20px;
+
+    }
+
+    /* menuButton */
+
+    .menuButton{
+
+        display:flex;
+
+        width:55px;
+
+        height:55px;
+
+        border-radius:18px;
+
+        background:#1f2937;
+
+        color:#f3f4f6;
+
+        box-shadow:
+            0 10px 25px rgba(0,0,0,.3);;
+
+        backdrop-filter:blur(20px);
+
+        justify-content:center;
+
+        align-items:center;
+
+        font-size:28px;
+
+        cursor:pointer;
+
+        box-shadow:
+        0 10px 25px rgba(0,0,0,.05);
+
+    }
+
+}
+
+
+
+@media (max-width:800px){
+
+    /* Smaller page padding */
+
+    .content{
+
+        padding:20px;
+
+    }
+
+    /* Header */
+
+    .header{
+
+        flex-direction:column;
+
+        gap:25px;
+
+        align-items:stretch;
+
+    }
+
+    /* Current patient card */
+
+    .patientBadge{
+
+        width:100%;
+
+    }
+
+    /* Search */
+
+    .patientSearch{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:15px;
+
+    }
+
+    .patientSearch input{
+
+        width:100%;
+
+    }
+
+    .patientSearch button{
+
+        width:100%;
+
+    }
+
+    /* Chips */
+
+    .chips{
+
+        gap:10px;
+
+    }
+
+    .chip{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    /* Risk circle */
+
+    .circle{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+    .score{
+
+        font-size:60px;
+
+    }
+
+    /* Explainability */
+
+    .row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .label{
+
+        width:100%;
+
+    }
+
+    .track{
+
+        width:100%;
+
+    }
+
+    .value{
+
+        width:100%;
+
+        text-align:left;
+
+    }
+
+    /* About panel */
+
+    #aboutPanel{
+
+        width:90%;
+
+        padding:30px;
+
+    }
 
 }
