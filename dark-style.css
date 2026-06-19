@@ -1,0 +1,932 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
+    background:#111827;
+    overflow-x:hidden;
+    color:#f3f4f6;
+}
+
+
+/* background blobs */
+
+.bg1{
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:radial-gradient(
+        circle,
+        rgba(255,100,100,.12),
+        transparent 70%
+    );
+    top:-150px;
+    left:-150px;
+    z-index:-3;
+}
+
+.bg2{
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:radial-gradient(
+        circle,
+        rgba(80,140,255,.12),
+        transparent 70%
+    );
+    right:-100px;
+    top:-100px;
+    z-index:-3;
+}
+
+.bg3{
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:radial-gradient(
+        circle,
+        rgba(170,120,255,.10),
+        transparent 70%
+    );
+    bottom:-150px;
+    left:35%;
+    z-index:-3;
+}
+
+
+/* layout */
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+
+/* sidebar */
+
+.sidebar{
+
+    width:120px;
+
+    background:linear-gradient(
+        180deg,
+        #1e3a8a,
+        #2563eb
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding-top:30px;
+
+    border-radius:0 30px 30px 0;
+
+    height:100vh;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+
+/* logo */
+
+.logo{
+
+    width:60px;
+
+    height:60px;
+
+    background:#1f2937;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#60a5fa;
+
+    margin-bottom:60px;
+
+}
+
+.icon{
+
+    width:50px;
+
+    height:50px;
+
+    background:rgba(255,255,255,.08);
+
+    margin-bottom:20px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#d1d5db;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.icon:hover{
+
+    transform:translateY(-4px);
+
+    background:#374151;
+
+    color:#60a5fa;
+
+}
+
+
+#patientList{
+
+    margin-top:15px;
+
+    margin-bottom:20px;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:100%;
+
+}
+
+
+.patientItem{
+
+    width:80px;
+
+    height:55px;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#e5e7eb;
+
+    font-size:11px;
+
+    font-weight:500;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    overflow:hidden;
+
+}
+
+
+.patientItem:hover{
+
+    background:#374151;
+
+    color:#60a5fa;
+
+}
+
+
+.patientItem.active{
+
+    background:#1f2937;
+
+    color:#60a5fa;
+
+    font-weight:600;
+
+    border:1px solid rgba(96,165,250,.35);
+
+    box-shadow:
+
+    0 0 20px rgba(96,165,250,.15);
+
+}
+
+
+.patientItem{
+
+    white-space:nowrap;
+
+}
+
+.patientItem:hover{
+
+    background:#374151;
+
+    color:#60a5fa;
+
+}
+
+
+/* content */
+
+.content{
+
+    flex:1;
+
+    padding:40px;
+
+}
+
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.header h1{
+
+    font-size:34px;
+
+}
+
+
+.subtitle{
+
+    color:#9ca3af;
+
+}
+
+
+/* Current patient badge */
+
+.patientBadge{
+
+    background:rgba(31,41,55,.8);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:20px 25px;
+
+    min-width:230px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.3);
+
+}
+
+
+.badgeRisk{
+
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:100px;
+
+    background:#43c67c;
+
+    color:white;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+}
+
+
+.badgePatient{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#f3f4f6;
+
+}
+
+
+.badgeInfo{
+
+    margin-top:8px;
+
+    color:#9ca3af;
+
+}
+
+
+
+/* chips */
+
+.chips{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+
+.chip{
+
+    padding:12px 18px;
+
+    background:rgba(31,41,55,.75);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:100px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.25);
+
+    color:#f3f4f6;
+
+}
+
+
+/* patient search */
+
+.patientSearch{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+
+.patientSearch input{
+
+    width:260px;
+
+    padding:15px 20px;
+
+    border:none;
+
+    outline:none;
+
+    background:rgba(31,41,55,.8);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.25);
+
+    font-size:16px;
+
+    color:#f3f4f6;
+
+}
+
+
+.patientSearch input::placeholder{
+
+    color:#9ca3af;
+
+}
+
+
+.patientSearch button{
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #2563eb,
+
+        #60a5fa
+
+    );
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,.25);
+
+    transition:.3s;
+
+}
+
+
+.patientSearch button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 18px 35px rgba(37,99,235,.35);
+
+}
+
+.patientSearch button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 18px 35px rgba(37,99,235,.35);
+
+}
+
+
+/* grid */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:300px 1fr 300px;
+
+    gap:25px;
+
+    align-items:start;
+
+    margin-bottom:25px;
+
+}
+
+
+/* cards */
+
+.card{
+
+    background:rgba(31,41,55,.75);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.35),
+
+    0 8px 15px rgba(0,0,0,.15);
+
+    transition:all .3s ease;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+/* section title */
+
+.section{
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#9ca3af;
+
+    margin-bottom:25px;
+
+}
+
+
+/* risk */
+
+.circle{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    border:12px solid #ff9638;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    box-shadow:
+
+    0 0 40px rgba(255,145,0,.15);
+
+}
+
+
+.high{
+
+    font-size:36px;
+
+    font-weight:700;
+
+}
+
+
+.tier{
+
+    color:#9ca3af;
+
+}
+
+
+.score{
+
+    text-align:center;
+
+    font-size:80px;
+
+    font-weight:700;
+
+    margin-top:30px;
+
+    color:#f3f4f6;
+
+}
+
+
+.scoreText{
+
+    text-align:center;
+
+    color:#9ca3af;
+
+}
+
+
+.conf{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#9ca3af;
+
+}
+
+
+/* explainability */
+
+.row{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+
+.label{
+
+    width:140px;
+
+    color:#f3f4f6;
+
+}
+
+
+.track{
+
+    flex:1;
+
+    height:12px;
+
+    background:#374151;
+
+    border-radius:100px;
+
+    overflow:hidden;
+
+}
+
+
+.bar{
+
+    height:100%;
+
+    border-radius:100px;
+
+}
+
+
+.blue{
+
+    background:#60a5fa;
+
+}
+
+
+.orange{
+
+    background:#ffb16b;
+
+}
+
+
+.value{
+
+    width:60px;
+
+    text-align:right;
+
+    color:#d1d5db;
+
+}
+
+
+/* actions */
+
+.action{
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    background:#374151;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+.primary{
+
+    background:linear-gradient(
+
+        90deg,
+
+        #2563eb,
+
+        #60a5fa
+
+    );
+
+    color:white;
+
+}
+
+
+/* audit */
+
+.auditItem{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* logged badge */
+
+.badge{
+
+    background:rgba(34,197,94,.15);
+
+    color:#4ade80;
+
+    padding:8px 15px;
+
+    border-radius:100px;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    border:1px solid rgba(74,222,128,.2);
+
+}
+
+
+/* responsive */
+
+@media(max-width:1200px){
+
+.grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+    display:none;
+
+    width:110px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+}
+
+
+
+#aboutPanel{
+
+    display:none;
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:450px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(31,41,55,.92);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.45);
+
+    z-index:999;
+
+}
+
+
+#aboutPanel h2{
+
+    margin-bottom:20px;
+
+    color:#f3f4f6;
+
+}
+
+
+#aboutPanel p{
+
+    line-height:1.8;
+
+    color:#d1d5db;
+
+}
+
+
+#aboutPanel hr{
+
+    margin:25px 0;
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* Close button */
+
+.closeButton{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#374151;
+
+    color:#d1d5db;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+
+.closeButton:hover{
+
+    background:#ef4444;
+
+    color:white;
+
+    transform:scale(1.08);
+
+}

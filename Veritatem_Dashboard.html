@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Veritatem Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+    <link
+        id="themeStylesheet"
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+
+
+    <div class="container">
+
+        <!-- ========================= -->
+        <!-- Sidebar -->
+        <!-- ========================= -->
+
+        <div class="sidebar">
+
+            <div class="logo">
+                V
+            </div>
+
+            <!-- 
+
+            <div class="icon">⌂</div>
+
+            -->
+
+            
+
+            <div class="icon"
+                onclick="togglePatientList()">
+
+                👤
+
+            </div>
+
+            <div id="patientList">
+
+
+            </div>
+            <div class="icon">📊</div>
+
+
+            <div class="icon"
+                onclick="toggleTheme()">
+                🌙
+            </div>
+
+            <div class="icon"
+                onclick="toggleAboutPanel()">
+
+                ⚙
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- Main Content -->
+        <!-- ========================= -->
+
+        <div class="content">
+
+            <!-- Header -->
+            <div class="header">
+
+                <!-- Linke Seite -->
+                <div>
+
+                    <h1>
+                        Veritatem
+                    </h1>
+
+                    <div class="subtitle">
+                        Decision support · not a diagnosis
+                    </div>
+
+                </div>
+
+
+            <!-- ========================= -->
+            <!-- Patient Search -->
+            <!-- ========================= -->
+
+            <div class="patientSearch">
+
+                <input
+                    type="text"
+                    id="patientIdInput"
+                    placeholder="Enter Patient ID">
+
+                <button
+                    onclick="loadPatientById()">
+
+                    Load Patient
+
+                </button>
+
+            </div>
+
+
+                <!-- Rechte Seite -->
+                <div class="patientBadge">
+
+                    <div class="badgeRisk">
+
+                        Current patient
+
+                    </div>
+
+                    <div
+                        class="badgePatient"
+                        id="currentPatientId">
+
+                        PX-00417
+
+                    </div>
+
+                    <div
+                        class="badgeInfo"
+                        id="currentPatientInfo">
+
+                        Age 22 · 11+2 weeks
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- Patient Chips -->
+            <!-- ========================= -->
+
+            <div class="chips"
+                id="chipsContainer">
+
+            </div>
+
+
+
+
+            <!-- ========================= -->
+            <!-- Main Grid -->
+            <!-- ========================= -->
+
+            <div class="grid">
+
+
+                <!-- ========================= -->
+                <!-- Risk Card -->
+                <!-- ========================= -->
+
+                <div class="card">
+
+                    <div class="section">
+                        Risk Tier
+                    </div>
+
+                    <div class="circle">
+
+                        <div class="high">
+
+                        </div>
+
+                        <div class="tier">
+
+                        </div>
+
+                    </div>
+
+                    <div class="score">
+
+                    </div>
+
+                    <div class="scoreText">
+                        Estimated probability
+                    </div>
+
+                    <div class="conf">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ========================= -->
+                <!-- Explainability -->
+                <!-- ========================= -->
+
+                <div class="card">
+
+                    <div class="section">
+                        Why this patient
+                    </div>
+
+                    <div id="factorsContainer">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ========================= -->
+                <!-- Recommended Actions -->
+                <!-- ========================= -->
+
+                <div class="card">
+
+                    <div class="section">
+                        Recommended Actions
+                    </div>
+
+                    <div id="actionsContainer">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- Audit Log -->
+            <!-- ========================= -->
+
+            <div class="card auditCard">
+
+                <div class="section">
+                    AI Act / MDR Audit Log
+                </div>
+
+                <div id="auditContainer">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- AboutPanel -->
+    <!-- ========================= -->
+
+
+    <div id="aboutPanel">
+
+     <div class="closeButton"
+        onclick="toggleAboutPanel()">
+
+        ✕
+
+    </div>
+
+    <h2>Veritatem</h2>
+
+    <p>
+        Clinical Decision Support System
+    </p>
+
+    <p>
+        Prototype version 0.1
+    </p>
+
+    <hr>
+
+    <p>
+        Developed by
+        <br>
+        Julian Baron
+    </p>
+
+    <p>
+        University of Graz
+    </p>
+
+    <p>
+        Bachelor Programme:
+        <br>
+        Law, Economics and Society in the Digital Age
+    </p>
+
+    <hr>
+
+    <p>
+        For academic and demonstration purposes only.
+    </p>
+
+</div>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
