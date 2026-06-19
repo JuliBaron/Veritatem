@@ -1,14 +1,18 @@
 // =====================================
-// Global variables
+// 1. Global variables
 // =====================================
 
 let patients = [];
 let currentPatient = 0;
 let scoreTimer;
-
+let patientListOpen = false;
 
 // =====================================
-// Load patients from Excel
+// 2. Daten laden
+// =====================================
+
+// =====================================
+// 2.1 Load patients from Excel
 // =====================================
 
 function loadPatients() {
@@ -82,7 +86,7 @@ function loadPatients() {
 
 
 // =====================================
-// Load patient by ID
+// 2.2 Load patient by ID
 // =====================================
 
 function loadPatientById() {
@@ -106,98 +110,30 @@ function loadPatientById() {
 
         updateDashboard();
 
+        showToast(
+            "✓ Patient loaded",
+            "#44c67d"
+        );
+
     }
 
     else {
 
-        alert(
-            "Patient not found"
+        showToast(
+            "⚠ Patient ID not found",
+            "#ff6b6b"
         );
 
     }
 
 }
 
-
 // =====================================
-// Build patient list
-// =====================================
-
-function buildPatientList(){
-
-    const patientList =
-        document.getElementById(
-            "patientList"
-        );
-
-    patientList.innerHTML = "";
-
-    patients.forEach((p,index)=>{
-
-        patientList.innerHTML += `
-
-        <div class="patientItem
-        ${index === currentPatient ? "active" : ""}"
-        onclick="selectPatient(${index})">
-
-            ${p.patient_id}
-
-        </div>
-
-        `;
-
-    });
-
-}
-
-// =====================================
-// Toggle patient list
+// 3. Dashboard
 // =====================================
 
-let patientListOpen = false;
-
-function togglePatientList(){
-
-    const list =
-        document.getElementById(
-            "patientList"
-        );
-
-    patientListOpen =
-        !patientListOpen;
-
-    if(patientListOpen){
-
-        list.style.display = "flex";
-
-    }
-
-    else{
-
-        list.style.display = "none";
-
-    }
-
-}
-
-
 // =====================================
-// Select patient
-// =====================================
-
-function selectPatient(index){
-
-    currentPatient = index;
-
-    updateDashboard();
-
-    buildPatientList();
-
-}
-
-
-// =====================================
-// Update dashboard
+// 3.1 Update dashboard
 // =====================================
 
 function updateDashboard() {
@@ -250,7 +186,7 @@ function updateDashboard() {
 }
 
 // =====================================
-// Patient chips
+// 3.2 Patient chips
 // =====================================
 
 
@@ -318,7 +254,7 @@ function updateChips(p) {
 }
 
 // =====================================
-// Calculate probability
+// 3.3 Calculate probability
 // =====================================
 
 function calculateProbability(p) {
@@ -426,7 +362,7 @@ function calculateProbability(p) {
 }
 
 // =====================================
-// Risk Card
+// 3.4 Risk Card
 // =====================================
 
 function updateRiskCard(
@@ -517,7 +453,7 @@ function updateRiskCard(
 }
 
 // =====================================
-// Explainability
+// 3.5 Explainability
 // =====================================
 
 function updateFactors(p) {
@@ -632,7 +568,7 @@ function updateFactors(p) {
 }
 
 // =====================================
-// Actions
+// 3.6 Actions
 // =====================================
 
 function updateActions(risk) {
@@ -753,7 +689,7 @@ function updateActions(risk) {
 }
 
 // =====================================
-// Audit log
+// 3.7 Audit log
 // =====================================
 
 function updateAuditLog(p) {
@@ -807,8 +743,9 @@ function updateAuditLog(p) {
     `;
 
 }
+
 // =====================================
-// Score animation
+// 3.8 Score animation
 // =====================================
 
 function animateScore(target) {
@@ -855,9 +792,195 @@ function animateScore(target) {
 
 }
 
+// =====================================
+// 4. Patientenverwaltung
+// =====================================
 
 // =====================================
-// AboutPanel
+// 4.1 Build patient list
+// =====================================
+
+function buildPatientList(){
+
+    const patientList =
+        document.getElementById(
+            "patientList"
+        );
+
+    patientList.innerHTML = "";
+
+    patients.forEach((p,index)=>{
+
+        patientList.innerHTML += `
+
+        <div class="patientItem
+        ${index === currentPatient ? "active" : ""}"
+        onclick="selectPatient(${index})">
+
+            ${p.patient_id}
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+// =====================================
+// 4.2 Toggle patient list
+// =====================================
+
+function togglePatientList(){
+
+    const list =
+        document.getElementById(
+            "patientList"
+        );
+
+    patientListOpen =
+        !patientListOpen;
+
+    if(patientListOpen){
+
+        list.style.display = "flex";
+
+    }
+
+    else{
+
+        list.style.display = "none";
+
+    }
+
+}
+
+
+// =====================================
+// 4.3 Select patient
+// =====================================
+
+function selectPatient(index){
+
+    currentPatient = index;
+
+    updateDashboard();
+
+    buildPatientList();
+
+}
+
+// =====================================
+// 5. Navigation
+// =====================================
+
+function showProjectPage(){
+
+    closeMobileMenu();
+
+    document
+        .getElementById(
+            "dashboardPage"
+        )
+        .style.display =
+        "none";
+
+    document
+        .getElementById(
+            "projectPage"
+        )
+        .style.display =
+        "block";
+    
+    document
+        .getElementById(
+            "patientBadge"
+        )
+        .style.display =
+        "none";
+
+}
+
+function showDashboard(){
+
+    closeMobileMenu();
+
+    document
+        .getElementById(
+            "projectPage"
+        )
+        .style.display =
+        "none";
+
+    document
+        .getElementById(
+            "dashboardPage"
+        )
+        .style.display =
+        "block";
+
+}
+
+function showAboutPanel(){
+
+    closeMobileMenu();
+
+    document
+        .getElementById(
+            "aboutPanel"
+        )
+        .style.display =
+        "block";
+
+}
+
+function closeAboutPanel(){
+
+    document
+        .getElementById(
+            "aboutPanel"
+        )
+        .style.display =
+        "none";
+
+}   
+
+
+// =====================================
+// 6. UI-Komponenten
+// =====================================
+
+// =====================================
+// 6.1 toast meldung
+// =====================================
+
+function showToast(message, color) {
+
+    let toast =
+        document.getElementById(
+            "toast"
+        );
+
+    toast.innerHTML =
+        message;
+
+    toast.style.background =
+        color;
+
+    toast.style.opacity =
+        "1";
+
+    setTimeout(() => {
+
+        toast.style.opacity =
+            "0";
+
+    }, 2500);
+
+}
+
+// =====================================
+// 6.2 AboutPanel
 // =====================================
 
 
@@ -882,9 +1005,8 @@ function toggleAboutPanel() {
 
 }
 
-
 // =====================================
-// ThemeSwich
+// 6.3 ThemeSwich
 // =====================================
 
 function toggleTheme() {
@@ -918,7 +1040,63 @@ function toggleTheme() {
 }
 
 // =====================================
-// Start application
+// 7. Event Listener
+// =====================================
+
+document
+    .getElementById(
+        "patientIdInput"
+    )
+    .addEventListener(
+        "keypress",
+        function(event){
+
+            if(
+                event.key === "Enter"
+            ){
+
+                loadPatientById();
+
+            }
+
+        }
+    );
+
+
+// =====================================
+// 8. Responsive
+// =====================================
+
+function toggleMobileMenu(){
+
+    document
+        .querySelector(
+            ".sidebar"
+        )
+        .classList
+        .toggle(
+            "open"
+        );
+
+}
+
+function closeMobileMenu(){
+
+    document
+        .querySelector(
+            ".sidebar"
+        )
+        .classList
+        .remove(
+            "open"
+        );
+
+}
+
+
+
+// =====================================
+// 9. Start application
 // =====================================
 
 loadPatients();
