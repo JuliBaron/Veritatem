@@ -483,6 +483,7 @@ body{
     border:1px solid rgba(255,255,255,.8);
     border-radius:30px;
     padding:30px;
+    margin-bottom:30px;
     box-shadow:
     0 20px 40px rgba(90,100,255,.08),
     0 8px 15px rgba(0,0,0,.03);
@@ -490,7 +491,13 @@ body{
 }
 
 .card:hover{
-    transform:translateY(-6px);
+     transform:translateY(-6px);
+}
+
+.nohoverCard:hover{
+
+    transform:none;
+
 }
 
 /* section title */
@@ -768,6 +775,217 @@ body{
 
 }
 
+/* ========================= */
+/* Project Page -->
+/* ========================= */
+
+.documentCard{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.documentCard:hover .openBadge{
+
+    opacity:1;
+
+}
+
+.openBadge{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    padding:8px 14px;
+
+    border-radius:100px;
+
+    background:rgba(126,182,255,.15);
+
+    color:#4f6bff;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    opacity:0.2;
+
+    transition:.3s;
+
+}
+
+.datasetInfo{
+
+    margin-bottom:25px;
+
+    line-height:1.8;
+
+    color:#7b8798;
+
+}
+
+
+.datasetTable{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+}
+
+
+.datasetTable th{
+
+    text-align:left;
+
+    padding:12px;
+
+    font-size:13px;
+
+}
+
+
+.datasetTable td{
+
+    padding:14px 12px;
+
+    border-top:1px solid rgba(0,0,0,.05);
+
+}
+
+
+.datasetSource{
+
+    margin-top:20px;
+
+    color:#8a93a7;
+
+    font-size:14px;
+
+}
+
+.sourceLink {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sourceLink:hover {
+    opacity: 0.8;
+}
+
+.datasetBox{
+
+    max-width:850px;
+
+    background:rgba(255,255,255,.4);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    overflow-x:auto;
+
+}
+
+.datasetLayout{
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:stretch;
+
+}
+
+.datasetBox{
+
+    width:850px;
+
+}
+
+.projectInfo{
+
+    flex:1;
+
+    background:rgba(255,255,255,.4);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.disclaimerGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+    align-items:start;
+
+}
+
+
+.disclaimerGrid h4{
+
+    margin-bottom:10px;
+
+}
+
+
+.disclaimerGrid p{
+
+    color:#7b8798;
+
+}
+
+.projectInfo{
+
+    flex:1;
+
+    background:rgba(255,255,255,.4);
+
+    border-radius:25px;
+
+    padding:30px;
+
+}
+
+.projectInfo p{
+
+    flex:1;
+
+    line-height:1.8;
+
+    color:#7b8798;
+
+}
+
+
+
+
+/* ========================= */
+/* AboutPanel -->
+/* ========================= */
+
 .closeButton{
 
     position:absolute;
@@ -922,6 +1140,19 @@ body{
 
         box-shadow:
         0 10px 25px rgba(0,0,0,.05);
+
+    }
+
+
+    .datasetLayout{
+
+        flex-direction:column;
+
+    }
+
+    .datasetBox{
+
+        width:100%;
 
     }
 
