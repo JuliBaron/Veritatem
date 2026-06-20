@@ -58,7 +58,7 @@
             
 
             <div class="icon"
-                onclick="togglePatientList()">
+                onclick="showPatientsPage()">
 
                 👤
 
@@ -129,7 +129,8 @@
 
                 <div 
                     class="patientBadge"
-                    id="patientBadge">
+                    id="patientBadge"
+                    onclick="showPatientsPage()">
 
                     <div class="badgeRisk">
 
@@ -288,6 +289,40 @@
             </div>
 
             <!-- Ende dashboardPage -->
+            
+            
+            <!-- ========================= -->
+            <!-- Patients Page -->
+            <!-- ========================= -->
+
+            <div id="patientsPage">
+
+            <!-- <br><br> -->
+
+            <!-- Dataset -->
+
+            <div class="section">
+                Dataset
+            </div>
+
+            <div id="datasetExplorer">
+
+            </div>
+
+            <!-- Add patient -->
+
+            <div class="action primary"
+                onclick="addPatient()">
+
+                <h3>
+                    + Add Patient
+                </h3>
+
+            </div>
+
+            </div>
+
+            <!-- Ende patientsPage -->
 
 
             <!-- ========================= -->
@@ -296,82 +331,62 @@
 
             <div id="projectPage">
 
-                <h1>
-                    Project Library
-                </h1>
+            <h1>
+                Project Library
+            </h1>
 
-                <div class="subtitle">
-                    Documents, datasets and mockups
-                </div>
+            <div class="subtitle">
+                Documents, datasets and mockups
+            </div>
 
-                <br><br>
+            <br><br>
 
-                <!-- Erster Bereich  -->
-
-                <div class="card">
-
-                    <div class="section">
-                        Documents
-                    </div>
-
-                    <div class="action">
-
-                        <h3>
-                            Business Plan
-                        </h3>
-
-                        <p>
-                            Financial model and market analysis
-                        </p>
-
-                    </div>
-
-                    <div class="action">
-
-                        <h3>
-                            Case Study
-                        </h3>
-
-                        <p>
-                            Clinical workflow and use case
-                        </p>
-
-                    </div>
-
-                    <div class="action">
-
-                        <h3>
-                            Presentation
-                        </h3>
-
-                        <p>
-                            Pitch deck slides
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <!-- Zweiter Bereich  -->
+            <div class="card">
 
                 <div class="section">
-                    Dataset
+                    Documents
                 </div>
 
-                <div id="datasetExplorer">
-
-                </div>
-
-                <div class="action primary"
-                    onclick="addPatient()">
+                <div class="action">
 
                     <h3>
-                        + Add Patient
+                        Business Plan
                     </h3>
+
+                    <p>
+                        Financial model and market analysis
+                    </p>
+
+                </div>
+
+                <div class="action">
+
+                    <h3>
+                        Case Study
+                    </h3>
+
+                    <p>
+                        Clinical workflow and use case
+                    </p>
+
+                </div>
+
+                <div class="action">
+
+                    <h3>
+                        Presentation
+                    </h3>
+
+                    <p>
+                        Pitch deck slides
+                    </p>
 
                 </div>
 
             </div>
+
+            </div>
+
 
             <!-- Ende projectPage -->
 
@@ -428,7 +443,7 @@
     <p>
         For academic and demonstration purposes only.
     </p>
-    
+
 </div>
 
     <!-- ========================= -->
