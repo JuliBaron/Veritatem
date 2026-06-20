@@ -1116,6 +1116,13 @@ function showDashboard(){
         )
         .style.display =
         "block";
+
+    document
+        .getElementById(
+            "patientSearch"
+        )
+        .style.display =
+        "flex";
     
     document
         .querySelector(
@@ -1129,7 +1136,7 @@ function showDashboard(){
             "#titleHeader .subtitle"
         )
         .innerText =
-        "Decision support · not a diagnosis";
+        "AI-assisted Clinical Decision Support System";
 
 }
 
@@ -1160,6 +1167,13 @@ function showPatientsPage(){
         )
         .style.display =
         "block";
+
+    document
+    .getElementById(
+        "patientSearch"
+    )
+    .style.display =
+    "flex";
 
     document.querySelector("#titleHeader h1").innerText =
     "Patient Management";
@@ -1246,6 +1260,13 @@ function hideAllPages(){
         .style.display =
         "none";
 
+    document
+        .getElementById(
+            "patientSearch"
+        )
+        .style.display =
+        "none";
+
 }
 
 
@@ -1312,33 +1333,9 @@ function toggleAboutPanel() {
 // 6.3 ThemeSwich
 // =====================================
 
-function toggleTheme() {
+function toggleTheme(){
 
-    let theme =
-        document.getElementById(
-            "themeStylesheet"
-        );
-
-    if (
-        theme.getAttribute("href")
-        === "style.css"
-    ) {
-
-        theme.setAttribute(
-            "href",
-            "dark-style.css"
-        );
-
-    }
-
-    else {
-
-        theme.setAttribute(
-            "href",
-            "style.css"
-        );
-
-    }
+    document.body.classList.toggle("dark");
 
 }
 
