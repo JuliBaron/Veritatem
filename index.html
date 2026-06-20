@@ -113,7 +113,7 @@
 
                 </div>
 
-                <div>
+                <div id="titleHeader">
 
                     <h1>
                         Veritatem
@@ -127,7 +127,9 @@
 
                 <!-- Rechte Seite -->
 
-                <div class="patientBadge">
+                <div 
+                    class="patientBadge"
+                    id="patientBadge">
 
                     <div class="badgeRisk">
 
@@ -304,6 +306,8 @@
 
                 <br><br>
 
+                <!-- Erster Bereich  -->
+
                 <div class="card">
 
                     <div class="section">
@@ -345,6 +349,25 @@
                         </p>
 
                     </div>
+
+                </div>
+
+                <!-- Zweiter Bereich  -->
+
+                <div class="section">
+                    Dataset
+                </div>
+
+                <div id="datasetExplorer">
+
+                </div>
+
+                <div class="action primary"
+                    onclick="addPatient()">
+
+                    <h3>
+                        + Add Patient
+                    </h3>
 
                 </div>
 
@@ -405,8 +428,52 @@
     <p>
         For academic and demonstration purposes only.
     </p>
-
+    
 </div>
+
+    <!-- ========================= -->
+    <!-- addPatient Panel -->
+    <!-- ========================= -->
+
+    <div id="addPatientPanel">
+
+        <div class="closeButton"
+            onclick="closeAddPatientPanel()">
+
+            ✕
+
+        </div>
+
+        <h2>
+            Add Patient
+        </h2>
+
+        <br>
+
+        <input
+            id="newPatientId"
+            placeholder="Patient ID">
+
+        <input
+            id="newAge"
+            placeholder="Age">
+
+        <input
+            id="newBMI"
+            placeholder="BMI">
+
+        <input
+            id="newGlucose"
+            placeholder="Fasting glucose">
+
+        <button
+            onclick="savePatient()">
+
+            Save Patient
+
+        </button>
+
+    </div>
 
 
     <!-- JavaScript -->
