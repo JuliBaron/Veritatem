@@ -344,13 +344,22 @@
 
             <br><br>
 
-            <div class="card">
+            <div class="card nohoverCard">
 
                 <div class="section">
                     Documents
                 </div>
 
-                <div class="action">
+                <div 
+                    class="action documentCard"
+                    onclick="openBusinessPlan()">
+
+                    <div class="openBadge">
+
+                        Open ↗
+
+                    </div>
+
 
                     <h3>
                         Business Plan
@@ -362,19 +371,15 @@
 
                 </div>
 
-                <div class="action">
+                <div 
+                    class="action documentCard"
+                    onclick="openPresentation()">
 
-                    <h3>
-                        Case Study
-                    </h3>
+                    <div class="openBadge">
 
-                    <p>
-                        Clinical workflow and use case
-                    </p>
+                        Open ↗
 
-                </div>
-
-                <div class="action">
+                    </div>
 
                     <h3>
                         Presentation
@@ -386,7 +391,262 @@
 
                 </div>
 
+                <div 
+                    class="action documentCard"
+                    onclick="openSummary()">
+
+                    <div class="openBadge">
+
+                        Open ↗
+
+                    </div>
+
+
+                    <h3>
+                        Summary
+                    </h3>
+
+                    <p>
+                        Get a broad overview of our project.
+                    </p>
+
+                </div>
+
             </div>
+
+            <!-- Dataset Structure -->
+
+            <div class="card nohoverCard">
+
+                <div class="section">
+                    Dataset Structure
+                </div>
+
+                <!-- 
+
+                <div class="datasetInfo">
+
+                    Veritatem uses a tabular data structure.
+                    Patient records are loaded from an external Excel dataset.
+
+                </div>
+
+                -->
+
+
+                <div class="datasetLayout">
+
+                    <!-- Tabelle -->
+
+                    <div class="datasetBox">
+
+                        <table class="datasetTable">
+
+                            <tr>
+                                <th>patient_id</th>
+                                <th>age</th>
+                                <th>gest_week</th>
+                                <th>bmi</th>
+                                <th>activity_level</th>
+                            </tr>
+
+                            <tr>
+                                <td>PX-00417</td>
+                                <td>22</td>
+                                <td>11.2</td>
+                                <td>20.8</td>
+                                <td>high</td>
+                            </tr>
+
+                            <tr>
+                                <td>PX-00284</td>
+                                <td>29</td>
+                                <td>12.1</td>
+                                <td>26.1</td>
+                                <td>moderate</td>
+                            </tr>
+
+                            <tr>
+                                <td>PX-00732</td>
+                                <td>35</td>
+                                <td>11.4</td>
+                                <td>33.4</td>
+                                <td>low</td>
+                            </tr>
+
+                        </table>
+
+                        <div class="datasetSource">
+
+                            Source:
+                            <span onclick="openExcel()" class="sourceLink">
+                                patients_veritatem.xlsx
+                            </span>
+                            <br> 
+                            Example subset of the dataset. Additional variables are available in the source file.
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- About the Project -->
+
+                    <div class="projectInfo">
+
+                        <div class="section">
+
+                            About the Project
+
+                        </div>
+
+                        <p>
+
+                            Veritatem is an academic proof-of-concept
+                            developed to demonstrate how AI-assisted
+                            clinical decision support systems could
+                            be structured.
+
+                        </p>
+
+                        <br>
+
+                        <p>
+
+                            Patient records are loaded from an external
+                            Excel dataset and visualized on the dashboard.
+
+                        </p>
+
+                        <br>
+
+                        <p>
+
+                            All probabilities, calculations and
+                            visualisations are illustrative and do not
+                            represent a validated clinical model.
+
+                        </p>
+
+                        <br>
+
+                        <p>
+
+                            The prototype was created for educational
+                            purposes and to explore concepts related
+                            to AI, healthcare and regulatory frameworks.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Ende Dataset Structure -->
+
+            <!-- Footer -->
+
+            <div class="card nohoverCard">
+
+                <div class="section">
+
+                    Project Information
+
+                </div>
+
+                <div class="disclaimerGrid">
+
+                    <div>
+
+                        <h4>
+
+                            Course
+
+                        </h4>
+
+                        <p>
+
+                            26S MDK.I04 Economic Aspects
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Lecturer
+
+                        </h4>
+
+                        <p>
+
+                            Dipl.-Ing. (FH) MA Michael Freidl
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Prepared by
+
+                        </h4>
+
+                        <p>
+
+                            Julian Baron,
+                            Zan Porenta, 
+                            <br>
+                            Satera Sleinyte
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Institution
+
+                        </h4>
+
+                        <p>
+
+                            Karl-Franzens-Universität Graz
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Project Status
+
+                        </h4>
+
+                        <p>
+
+                            Academic Proof of Concept
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- End Footer -->
+
 
             </div>
 
