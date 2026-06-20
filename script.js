@@ -1365,9 +1365,50 @@ document
         }
     );
 
+// =====================================
+// 8. Open Documents
+// =====================================
+
+function openBusinessPlan(){
+
+    window.open(
+        "Veritatem_Business_Plan.pdf",
+        "_blank"
+    );
+
+}
+
+function openPresentation(){
+
+    window.open(
+        "Veritatem_Presentation.pdf",
+        "_blank"
+    );
+
+}
+
+function openSummary(){
+
+    window.open(
+        "Summary_veritatem.pdf",
+        "_blank"
+    );
+
+}
+
+function openExcel(){
+
+    window.open(
+        "patients_veritatem.pdf",
+        "_blank"
+    );
+
+}
+
+
 
 // =====================================
-// 8. Responsive
+// 9. Responsive
 // =====================================
 
 function toggleMobileMenu(){
@@ -1399,7 +1440,7 @@ function closeMobileMenu(){
 
 
 // =====================================
-// 9. Start application
+// 10. Start application
 // =====================================
 
 loadPatients();
