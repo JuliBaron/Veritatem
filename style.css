@@ -224,6 +224,48 @@ body{
 
 }
 
+.datasetRow{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+.deletePatient{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ff6b6b;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.deletePatient:hover{
+
+    background:#ff6b6b;
+
+    color:white;
+
+}
+
 /* content */
 
 .content{
@@ -627,6 +669,78 @@ body{
 
 }
 
+#addPatientPanel{
+
+    display:none;
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:450px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.15);
+
+    z-index:999;
+
+}
+
+#addPatientPanel input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.8);
+
+    font-size:15px;
+
+}
+
+#addPatientPanel button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        90deg,
+        #7eb6ff,
+        #adcfff);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
 .closeButton{
 
     position:absolute;
@@ -804,11 +918,20 @@ body{
 
     }
 
+    /* Hide chips on mobile */
+
+    .chips{
+
+        display:none;
+
+    }
+
     /* Current patient card */
 
     .patientBadge{
 
         width:100%;
+        display:inline-block;
 
     }
 
