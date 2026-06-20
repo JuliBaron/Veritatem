@@ -623,6 +623,8 @@ body{
 
     padding:30px;
 
+    margin-bottom:30px;
+
     box-shadow:
 
     0 20px 40px rgba(0,0,0,.35),
@@ -635,11 +637,14 @@ body{
 
 
 .card:hover{
-
-    transform:translateY(-6px);
-
+     transform:translateY(-6px);
 }
 
+.nohoverCard:hover{
+
+    transform:none;
+
+}
 
 /* section title */
 
@@ -1049,6 +1054,214 @@ body{
 
 }
 
+/* ========================= */
+/* Project Page */
+/* ========================= */
+
+.documentCard{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.documentCard:hover .openBadge{
+
+    opacity:1;
+
+}
+
+.openBadge{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    padding:8px 14px;
+
+    border-radius:100px;
+
+    background:rgba(96,165,250,.15);
+
+    color:#60a5fa;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    opacity:0.25;
+
+    transition:.3s;
+
+}
+
+.datasetInfo{
+
+    margin-bottom:25px;
+
+    line-height:1.8;
+
+    color:#9ca3af;
+
+}
+
+
+.datasetTable{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+}
+
+
+.datasetTable th{
+
+    text-align:left;
+
+    padding:12px;
+
+    font-size:13px;
+
+    color:#f3f4f6;
+
+}
+
+
+.datasetTable td{
+
+    padding:14px 12px;
+
+    color:#d1d5db;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.datasetSource{
+
+    margin-top:20px;
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+}
+
+
+.sourceLink{
+
+    cursor:pointer;
+
+    color:#60a5fa;
+
+    text-decoration:underline;
+
+}
+
+.sourceLink:hover{
+
+    opacity:.8;
+
+}
+
+
+.datasetLayout{
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:stretch;
+
+}
+
+
+.datasetBox{
+
+    width:850px;
+
+    max-width:850px;
+
+    background:rgba(31,41,55,.8);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    overflow-x:auto;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+.projectInfo{
+
+    flex:1;
+
+    background:rgba(31,41,55,.8);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+.disclaimerGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+    align-items:start;
+
+}
+
+
+.disclaimerGrid h4{
+
+    margin-bottom:10px;
+
+    color:#f3f4f6;
+
+}
+
+
+.disclaimerGrid p{
+
+    color:#9ca3af;
+
+}
+
+
+
+
+/* ========================= */
+/* AboutPanel -->
+/* ========================= */
 
 /* Close button */
 
