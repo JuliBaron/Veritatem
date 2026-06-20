@@ -828,7 +828,7 @@ function buildPatientList(){
 }
 
 // =====================================
-// 4.2 Toggle patient list
+// 4.2 Toggle patient list -! Not in use !-
 // =====================================
 
 function togglePatientList(){
@@ -1090,50 +1090,11 @@ function deletePatient(index){
 // 5. Navigation
 // =====================================
 
-function showProjectPage(){
-
-    closeMobileMenu();
-
-    document
-        .getElementById(
-            "dashboardPage"
-        )
-        .style.display =
-        "none";
-
-    document
-        .getElementById(
-            "projectPage"
-        )
-        .style.display =
-        "block";
-    
-    document
-        .getElementById(
-            "patientBadge"
-        )
-        .style.display =
-        "none";
-
-    document
-        .getElementById(
-            "titleHeader"
-        )
-        .style.display =
-        "none";
-
-}
-
 function showDashboard(){
 
     closeMobileMenu();
 
-    document
-        .getElementById(
-            "projectPage"
-        )
-        .style.display =
-        "none";
+    hideAllPages();
 
     document
         .getElementById(
@@ -1141,7 +1102,51 @@ function showDashboard(){
         )
         .style.display =
         "block";
+
+    document
+        .getElementById(
+            "patientBadge"
+        )
+        .style.display =
+        "block";
+
+    document
+        .getElementById(
+            "titleHeader"
+        )
+        .style.display =
+        "block";
     
+    document
+        .querySelector(
+            "#titleHeader h1"
+        )
+        .innerText =
+        "Veritatem";
+
+    document
+        .querySelector(
+            "#titleHeader .subtitle"
+        )
+        .innerText =
+        "Decision support · not a diagnosis";
+
+}
+
+
+function showPatientsPage(){
+
+    closeMobileMenu();
+
+    hideAllPages();
+
+    document
+        .getElementById(
+            "patientsPage"
+        )
+        .style.display =
+        "block";
+
     document
         .getElementById(
             "patientBadge"
@@ -1156,7 +1161,29 @@ function showDashboard(){
         .style.display =
         "block";
 
+    document.querySelector("#titleHeader h1").innerText =
+    "Patient Management";
+
+    document.querySelector("#titleHeader .subtitle").innerText =
+    "Dataset explorer and patient builder";
+
 }
+
+function showProjectPage(){
+
+    closeMobileMenu();
+
+    hideAllPages();
+
+    document
+        .getElementById(
+            "projectPage"
+        )
+        .style.display =
+        "block";
+
+}
+
 
 function showAboutPanel(){
 
@@ -1180,7 +1207,46 @@ function closeAboutPanel(){
         .style.display =
         "none";
 
-}   
+}
+
+function hideAllPages(){
+
+    document
+        .getElementById(
+            "dashboardPage"
+        )
+        .style.display =
+        "none";
+
+    document
+        .getElementById(
+            "patientsPage"
+        )
+        .style.display =
+        "none";
+
+    document
+        .getElementById(
+            "projectPage"
+        )
+        .style.display =
+        "none";
+
+    document
+        .getElementById(
+            "patientBadge"
+        )
+        .style.display =
+        "none";
+
+    document
+        .getElementById(
+            "titleHeader"
+        )
+        .style.display =
+        "none";
+
+}
 
 
 // =====================================
