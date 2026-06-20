@@ -54,6 +54,8 @@ function loadPatients() {
             patients =
                 XLSX.utils.sheet_to_json(sheet);
                 buildPatientList();
+                buildDatasetExplorer();
+                updateDashboard();
                 console.log(patients[0]);
 
             console.log(
@@ -68,8 +70,6 @@ function loadPatients() {
                 );
 
             }
-
-            updateDashboard();
 
         })
 
@@ -855,7 +855,6 @@ function togglePatientList(){
 
 }
 
-
 // =====================================
 // 4.3 Select patient
 // =====================================
@@ -867,6 +866,223 @@ function selectPatient(index){
     updateDashboard();
 
     buildPatientList();
+
+}
+
+// =====================================
+// 4.4 Build dataset explorer
+// =====================================
+function buildDatasetExplorer(){
+
+    let html = "";
+
+    patients.forEach((p, index) => {
+
+        let deleteButton;
+
+        if (p.custom) {
+
+            deleteButton = `
+
+                <div class="deletePatient"
+
+                    onclick="deletePatient(${index})">
+
+                    ✕
+
+                </div>
+
+            `;
+
+        }
+
+        else {
+
+            deleteButton = "";
+
+        }
+
+        html += `
+
+        <div class="action">
+
+            <div class="datasetRow">
+
+                <div
+                    onclick="selectPatientFromDataset(${index})"
+                    style="cursor:pointer; flex:1;">
+
+                    <h3>
+
+                        ${p.patient_id}
+
+                    </h3>
+
+                    <p>
+
+                        Age ${p.age} · BMI ${p.bmi}
+
+                    </p>
+
+                </div>
+
+                ${deleteButton}
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+    document
+        .getElementById(
+            "datasetExplorer"
+        )
+        .innerHTML =
+        html;
+
+}
+// =====================================
+// 4.5 Select patient from dataset
+// =====================================
+function selectPatientFromDataset(index){
+
+    currentPatient = index;
+
+    updateDashboard();
+
+    buildPatientList();
+
+    showDashboard();
+
+    showToast(
+        "✓ Patient loaded",
+        "#44c67d"
+    );
+
+}
+
+// =====================================
+// 4.6 Add patient
+// =====================================
+function addPatient(){
+
+    document
+        .getElementById(
+            "addPatientPanel"
+        )
+        .style.display =
+        "block";
+
+}
+
+function closeAddPatientPanel(){
+
+    document
+        .getElementById(
+            "addPatientPanel"
+        )
+        .style.display =
+        "none";
+
+}
+
+// =====================================
+// 4.7 Save patient
+// =====================================
+
+function savePatient(){
+
+    let patient = {
+
+        patient_id:
+            document
+                .getElementById(
+                    "newPatientId"
+                )
+                .value,
+
+        age:
+            Number(
+                document
+                    .getElementById(
+                        "newAge"
+                    )
+                    .value
+            ),
+
+        bmi:
+            Number(
+                document
+                    .getElementById(
+                        "newBMI"
+                    )
+                    .value
+            ),
+
+        fasting_glucose:
+            Number(
+                document
+                    .getElementById(
+                        "newGlucose"
+                    )
+                    .value
+            ),
+
+        gest_week:11.2,
+
+        activity_level:"moderate",
+
+        smoking_status:"never",
+
+        parity:0,
+
+        prior_gdm:0,
+
+        family_history_dm:0,
+
+        custom:true
+
+    };
+
+    patients.push(
+        patient
+    );
+
+    buildPatientList();
+
+    buildDatasetExplorer();
+
+    closeAddPatientPanel();
+
+    showToast(
+        "✓ Patient added",
+        "#44c67d"
+    );
+
+}
+
+// =====================================
+// 4.8 Delete patient
+// =====================================
+
+function deletePatient(index){
+
+    patients.splice(
+        index,
+        1
+    );
+
+    buildPatientList();
+
+    buildDatasetExplorer();
+
+    showToast(
+        "✓ Patient deleted",
+        "#ff6b6b"
+    );
 
 }
 
@@ -899,6 +1115,13 @@ function showProjectPage(){
         .style.display =
         "none";
 
+    document
+        .getElementById(
+            "titleHeader"
+        )
+        .style.display =
+        "none";
+
 }
 
 function showDashboard(){
@@ -915,6 +1138,20 @@ function showDashboard(){
     document
         .getElementById(
             "dashboardPage"
+        )
+        .style.display =
+        "block";
+    
+    document
+        .getElementById(
+            "patientBadge"
+        )
+        .style.display =
+        "block";
+
+    document
+        .getElementById(
+            "titleHeader"
         )
         .style.display =
         "block";
