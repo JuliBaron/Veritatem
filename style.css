@@ -303,6 +303,16 @@ body{
     box-shadow:
     0 10px 25px rgba(0,0,0,.05);
 
+    cursor:pointer;
+
+}
+
+.patientBadge:hover{
+
+    transform:translateY(-3px);
+
+    transition:.3s;
+
 }
 
 .badgeRisk{
@@ -741,6 +751,23 @@ body{
 
 }
 
+.action.primary{
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.action.primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 35px rgba(80,120,255,.25);
+
+}
+
 .closeButton{
 
     position:absolute;
@@ -781,7 +808,13 @@ body{
 
     transform:scale(1.08);
 
-}  
+}
+
+#patientsPage{
+
+    display:none;
+
+}
 
 
 #projectPage{
