@@ -519,7 +519,7 @@ body{
     backdrop-filter:blur(25px);
     border-radius:30px;
     padding:20px;
-    margin-bottom:15px;
+    margin-bottom:10px;
     box-shadow:
     0 20px 40px rgba(90,100,255,.08),
     0 8px 15px rgba(0,0,0,.03);
@@ -836,11 +836,21 @@ body{
 /* ========================= */
 
 .documentCard{
+    padding:10px 16px;
+    margin-bottom:10px;
 
     position:relative;
 
     cursor:pointer;
 
+}
+
+.documentCard h3{
+    font-size:15px;
+}
+
+.documentCard p{
+    font-size:13px;
 }
 
 .documentCard:hover .openBadge{
@@ -903,7 +913,7 @@ body{
 
     text-align:left;
 
-    padding:12px;
+    padding:10px 12px;
 
     font-size:13px;
 
@@ -912,7 +922,7 @@ body{
 
 .datasetTable td{
 
-    padding:14px 12px;
+    padding:10px 12px;
 
     border-top:1px solid rgba(0,0,0,.05);
 
@@ -921,11 +931,11 @@ body{
 
 .datasetSource{
 
-    margin-top:20px;
+    margin-top:auto;
 
     color:var(--secondary);
 
-    font-size:14px;
+    font-size:13px;
 
 }
 
@@ -940,53 +950,47 @@ body{
 
 .datasetBox{
 
-    max-width:850px;
-
+    height:100%;
     background:var(--card-bg);
     border:1px solid var(--card-border);
 
     border-radius:25px;
 
-    padding:25px;
+    padding:20px;
 
-    margin-top:25px;
 
     overflow-x:auto;
+    display:flex;
+    flex-direction:column;
 
 }
 
 .datasetLayout{
-
-    display:flex;
-
-    gap:40px;
-
+    display:grid;
+    grid-template-columns:3fr 1.1fr;
+    gap:30px;
     align-items:stretch;
-
-}
-
-.datasetBox{
-
-    width:850px;
-
 }
 
 .projectInfo{
-
-    flex:1;
 
     background:var(--card-bg);
     border:1px solid var(--card-border);
 
     border-radius:25px;
 
-    padding:30px;
-
-    display:flex;
-
-    flex-direction:column;
-
+    width:100%;
+    padding:22px 30px;
+    margin-bottom:20px;
 }
+
+.documentsBox{
+    width: 100%;
+    margin-bottom:0;
+    padding:18px;
+}
+
+
 
 .disclaimerGrid{
 
@@ -995,7 +999,8 @@ body{
     grid-template-columns:
         repeat(auto-fit,minmax(180px,1fr));
 
-    gap:20px;
+    gap:6px;
+    font-size:14px;
 
     align-items:start;
 
@@ -1004,13 +1009,13 @@ body{
 
 .disclaimerGrid h4{
 
-    margin-bottom:10px;
+    margin-bottom:2px;
 
 }
 
 
 .disclaimerGrid p{
-
+    font-size:15px;
     color:var(--secondary);
 
 }
@@ -1018,9 +1023,8 @@ body{
 .projectInfo p{
 
     flex:1;
-
-    line-height:1.8;
-
+    line-height:1.6;
+    margin-bottom:18px;
     color:var(--secondary);
 
 }
