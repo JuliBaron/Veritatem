@@ -83,7 +83,7 @@
                 onclick="toggleTheme()">
                 🌙
             </div>
-            -->
+            
 
             <div class="icon"
                 onclick="showAboutPanel()">
@@ -91,6 +91,8 @@
                 ⚙
 
             </div>
+
+            -->
 
         </div>
 
@@ -344,76 +346,31 @@
             </div>
 
             <br><br>
+            
+            <!-- About the Project -->
 
-            <div class="card nohoverCard">
+            <div class="projectInfo">
 
                 <div class="section">
-                    Documents
-                </div>
 
-                <div 
-                    class="action documentCard"
-                    onclick="openBusinessPlan()">
-
-                    <div class="openBadge">
-
-                        Open ↗
-
-                    </div>
-
-
-                    <h3>
-                        Business Plan
-                    </h3>
-
-                    <p>
-                        Financial model and market analysis
-                    </p>
+                    About the Project
 
                 </div>
 
-                <div 
-                    class="action documentCard"
-                    onclick="openPresentation()">
+                <p>
 
-                    <div class="openBadge">
+                    This dashboard illustrates how the Veritatem project and its AI-assisted Software-as-a-Service (SaaS) clinical decision support system (CDSS) could be visualized. The prototype is based on an external Excel dataset containing three fictional patient records representing low-, moderate-, and high-risk scenarios. 
+                    <br>
+                    To demonstrate user interaction, the platform also includes a Patient Management section for creating additional patient profiles. These entries are not stored in the underlying dataset and serve solely to showcase the functionality of the interface. All generated values, probabilities, and visualizations are illustrative and are not intended for clinical use. 
+                    <br> 
+                    Veritatem explores how AI-assisted decision support could help clinicians identify and manage gestational diabetes at an earlier stage. The system provides recommendations only, while all diagnostic and treatment decisions remain the responsibility of the clinician. 
+                    <br>
+                    In addition to the technical concept, the project examines regulatory, economic, and ethical aspects of AI in healthcare, including the MDR, AI Act, GDPR, and data acquisition. Further information can be found in the Documents section, which provides access to the business plan, presentation, and executive summary.
 
-                        Open ↗
-
-                    </div>
-
-                    <h3>
-                        Presentation
-                    </h3>
-
-                    <p>
-                        Pitch deck slides
-                    </p>
-
-                </div>
-
-                <div 
-                    class="action documentCard"
-                    onclick="openSummary()">
-
-                    <div class="openBadge">
-
-                        Open ↗
-
-                    </div>
-
-
-                    <h3>
-                        Summary
-                    </h3>
-
-                    <p>
-                        Get a broad overview of our project
-                    </p>
-
-                </div>
+                </p>
 
             </div>
+
 
             <!-- Dataset Structure -->
 
@@ -490,54 +447,75 @@
 
                     </div>
 
+                    <!-- Documents -->
 
-                    <!-- About the Project -->
-
-                    <div class="projectInfo">
+                    <div class="card nohoverCard documentsBox">
 
                         <div class="section">
+                            Documents
+                        </div>
 
-                            About the Project
+                        <div 
+                            class="action documentCard"
+                            onclick="openBusinessPlan()">
+
+                            <div class="openBadge">
+
+                                Open ↗
+
+                            </div>
+
+
+                            <h3>
+                                Business Plan
+                            </h3>
+
+                            <p>
+                                Financial model and market analysis
+                            </p>
 
                         </div>
 
-                        <p>
+                        <div 
+                            class="action documentCard"
+                            onclick="openPresentation()">
 
-                            Veritatem is an academic proof-of-concept
-                            developed to demonstrate how AI-assisted
-                            clinical decision support systems could
-                            be structured.
+                            <div class="openBadge">
 
-                        </p>
+                                Open ↗
 
-                        <br>
+                            </div>
 
-                        <p>
+                            <h3>
+                                Presentation
+                            </h3>
 
-                            Patient records are loaded from an external
-                            Excel dataset and visualized on the dashboard.
+                            <p>
+                                Pitch deck slides
+                            </p>
 
-                        </p>
+                        </div>
 
-                        <br>
+                        <div 
+                            class="action documentCard"
+                            onclick="openSummary()">
 
-                        <p>
+                            <div class="openBadge">
 
-                            All probabilities, calculations and
-                            visualisations are illustrative and do not
-                            represent a validated clinical model.
+                                Open ↗
 
-                        </p>
+                            </div>
 
-                        <br>
 
-                        <p>
+                            <h3>
+                                Summary
+                            </h3>
 
-                            The prototype was created for educational
-                            purposes and to explore concepts related
-                            to AI, healthcare and regulatory frameworks.
+                            <p>
+                                Get a broad overview of our project
+                            </p>
 
-                        </p>
+                        </div>
 
                     </div>
 
