@@ -153,6 +153,12 @@ body{
 
 }
 
+
+.sidebarIcon{
+    width: 60px;
+    height: 60px;
+}
+
 .logo{
     width:60px;
     height:60px;
@@ -306,19 +312,20 @@ body{
 
 .content{
     height:100vh;
+    overflow-y:auto;
     flex:1;
-    padding:25px;
+    padding:24px;
 }
 
 .header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:20px;
+    margin-bottom:10px;
 }
 
 .header h1{
-    font-size:34px;
+    font-size:28px;
 }
 
 .subtitle{
@@ -506,9 +513,9 @@ body{
 .grid{
     display:grid;
     grid-template-columns:1fr 3fr 1.2fr;
-    gap:24px;
+    gap:16px;
     align-items:start;
-    margin-bottom:25px;
+    margin-bottom:12px;
 }
 
 /* cards */
@@ -518,8 +525,8 @@ body{
     border:1px solid var(--card-border);
     backdrop-filter:blur(25px);
     border-radius:30px;
-    padding:20px;
-    margin-bottom:10px;
+    padding:16px;
+    margin-bottom:20px;
     box-shadow:
     0 20px 40px rgba(90,100,255,.08),
     0 8px 15px rgba(0,0,0,.03);
@@ -968,8 +975,9 @@ body{
 .datasetLayout{
     display:grid;
     grid-template-columns:3fr 1.1fr;
-    gap:30px;
+    gap:20px;
     align-items:stretch;
+    margin-bottom:20px;
 }
 
 .projectInfo{
@@ -980,13 +988,13 @@ body{
     border-radius:25px;
 
     width:100%;
-    padding:22px 30px;
+    padding: 22px 30px;
     margin-bottom:20px;
 }
 
 .documentsBox{
     width: 100%;
-    margin-bottom:0;
+    margin-bottom:20px;
     padding:18px;
 }
 
@@ -1023,8 +1031,8 @@ body{
 .projectInfo p{
 
     flex:1;
-    line-height:1.6;
-    margin-bottom:18px;
+    line-height:1.4;
+    margin-bottom:10px;
     color:var(--secondary);
 
 }
@@ -1083,9 +1091,7 @@ body{
 
 }
 
-
 #projectPage{
-
     display:none;
 
 }
