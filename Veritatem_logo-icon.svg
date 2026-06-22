@@ -1,0 +1,26 @@
+<svg width="512" height="512" viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Weißes abgerundetes Quadrat -->
+    <rect
+        x="32"
+        y="32"
+        width="448"
+        height="448"
+        rx="75"
+        fill="#FFFFFF"/>
+
+    <!-- Großes V -->
+    <path
+        d="
+        M165 145
+        L235 355
+        L277 355
+        L347 145
+        L297 145
+        L256 285
+        L215 145
+        Z"
+        fill="#4E7EFF"/>
+
+</svg>
