@@ -1343,6 +1343,19 @@ body{
 
     }
 
+    .datasetLayout{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .datasetBox{
+        overflow-x:auto;
+    }
+
+    .datasetTable{
+        min-width:500px;
+    }
+
     /* About panel */
 
     #aboutPanel{
