@@ -1369,7 +1369,7 @@ document
 function openBusinessPlan(){
 
     window.open(
-        "Veritatem_Business_Plan.pdf",
+        "docs/Veritatem_Business_Plan.pdf",
         "_blank"
     );
 
@@ -1378,7 +1378,7 @@ function openBusinessPlan(){
 function openPresentation(){
 
     window.open(
-        "Veritatem_Presentation.pdf",
+        "docs/Veritatem_Presentation.pdf",
         "_blank"
     );
 
@@ -1387,7 +1387,7 @@ function openPresentation(){
 function openSummary(){
 
     window.open(
-        "Summary_veritatem.pdf",
+        "docs/Summary_veritatem.pdf",
         "_blank"
     );
 
@@ -1396,7 +1396,7 @@ function openSummary(){
 function openExcel(){
 
     window.open(
-        "patients_veritatem.pdf",
+        "docs/patients_veritatem.pdf",
         "_blank"
     );
 
