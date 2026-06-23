@@ -1387,7 +1387,7 @@ function openPresentation(){
 function openSummary(){
 
     window.open(
-        "docs/Summary_veritatem.pdf",
+        "docs/Veritatem_Summary.pdf",
         "_blank"
     );
 
