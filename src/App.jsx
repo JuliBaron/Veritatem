@@ -137,7 +137,7 @@ function App() {
   useEffect(() => {
     const loadPatients = async () => {
       try {
-        const response = await fetch('/patients_veritatem.xlsx')
+        const response = await fetch(`${import.meta.env.BASE_URL}patients_veritatem.xlsx`)
 
         if (!response.ok) {
           throw new Error('Failed to load Excel file')
@@ -333,17 +333,17 @@ function App() {
         </div>
 
         <div className="icon" onClick={() => { setPage('dashboard'); setSidebarOpen(false) }}>
-          <img src="/assets/icons/home-icon.svg" className="sidebarIcon" alt="Dashboard" />
+          <img src={`${import.meta.env.BASE_URL}assets/icons/home-icon.svg`} className="sidebarIcon" alt="Dashboard" />
         </div>
 
         <div className="icon" onClick={() => { setPage('patients'); setSidebarOpen(false) }}>
-          <img src="/assets/icons/user-icon.svg" className="sidebarIcon" alt="Patients" />
+          <img src={`${import.meta.env.BASE_URL}assets/icons/user-icon.svg`} className="sidebarIcon" alt="Patients" />
         </div>
 
         <div id="patientList" style={{ display: 'none' }} />
 
         <div className="icon" onClick={() => { setPage('project'); setSidebarOpen(false) }}>
-          <img src="/assets/icons/project_libary-icon.svg" className="sidebarIcon" alt="Project library" />
+          <img src={`${import.meta.env.BASE_URL}assets/icons/project_libary-icon.svg`} className="sidebarIcon" alt="Project library" />
         </div>
       </aside>
 
@@ -566,7 +566,7 @@ function App() {
 
                 <div className="datasetSource">
                   Source:
-                  <span onClick={() => openDocument('/docs/patients_veritatem.pdf')} className="sourceLink">
+                  <span onClick={() => openDocument(`${import.meta.env.BASE_URL}docs/patients_veritatem.pdf`)} className="sourceLink">
                     {' '}
                     patients_veritatem.xlsx
                   </span>
@@ -578,19 +578,19 @@ function App() {
               <div className="card nohoverCard documentsBox">
                 <div className="section">Documents</div>
 
-                <div className="action documentCard" onClick={() => openDocument('/docs/Veritatem_Business_Plan.pdf')}>
+                <div className="action documentCard" onClick={() => openDocument(`${import.meta.env.BASE_URL}docs/Veritatem_Business_Plan.pdf`)}>
                   <div className="openBadge">Open ↗</div>
                   <h3>Business Plan</h3>
                   <p>Financial model and market analysis</p>
                 </div>
 
-                <div className="action documentCard" onClick={() => openDocument('/docs/Veritatem_Presentation.pdf')}>
+                <div className="action documentCard" onClick={() => openDocument(`${import.meta.env.BASE_URL}docs/Veritatem_Presentation.pdf`)}>
                   <div className="openBadge">Open ↗</div>
                   <h3>Presentation</h3>
                   <p>Pitch deck slides</p>
                 </div>
 
-                <div className="action documentCard" onClick={() => openDocument('/docs/Veritatem_Summary.pdf')}>
+                <div className="action documentCard" onClick={() => openDocument(`${import.meta.env.BASE_URL}docs/Veritatem_Summary.pdf`)}>
                   <div className="openBadge">Open ↗</div>
                   <h3>Summary</h3>
                   <p>Get a broad overview of our project</p>
